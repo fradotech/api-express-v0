@@ -6,7 +6,7 @@ module.exports = {
       // eslint-disable-next-line no-bitwise
       (~err.message.indexOf('not found') || (~err.message.indexOf('Cast to ObjectId failed')))
     ) {
-      return next();
+      return next()
     }
 
     if (err.name === 'SequelizeUniqueConstraintError') {
@@ -16,10 +16,10 @@ module.exports = {
           message: `The ${err.errors[0].path} "${err.errors[0].value}" is already in use`,
           success: false,
           data: [],
-        });
+        })
     }
 
-    console.error(err.stack);
+    console.error(err.stack)
 
     // error as json
     return res.status(err.status || err.code || 500)
@@ -28,6 +28,6 @@ module.exports = {
         message: err.message,
         success: false,
         data: [],
-      });
+      })
   }
 }

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const basename = path.basename(__filename);
-const controllers = {};
+const basename = path.basename(__filename)
+const controllers = {}
 
 // Initializing controllers
 fs.readdirSync(__dirname)
@@ -13,8 +13,8 @@ fs.readdirSync(__dirname)
       file.slice(-13) === 'controller.js',
   )
   .forEach((file) => {
-    const controller = require(path.join(__dirname, file));
-    controllers[controller.name] = controller;
-  });
+    const controller = require(path.join(__dirname, file))
+    controllers[controller.name] = controller
+  })
 
-module.exports = controllers;
+module.exports = controllers

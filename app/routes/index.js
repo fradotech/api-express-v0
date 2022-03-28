@@ -1,10 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const basename = path.basename(__filename);
-const routes = [];
+const basename = path.basename(__filename)
+const routes = []
 
-// Initializing routes
 fs.readdirSync(__dirname)
   .filter(
     (file) =>
@@ -13,8 +12,8 @@ fs.readdirSync(__dirname)
       file.slice(-9) === 'router.js',
   )
   .forEach((file) => {
-    const routeGroup = require(path.join(__dirname, file));
-    routes.push(routeGroup);
-  });
+    const routeGroup = require(path.join(__dirname, file))
+    routes.push(routeGroup)
+  })
 
-module.exports = routes;
+module.exports = routes

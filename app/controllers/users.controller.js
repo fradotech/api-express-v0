@@ -46,11 +46,9 @@ module.exports = {
 
   updateProfile: async (req, res, next) => {
     try {
-      // Start Transaction
       const result = await models.sequelize.transaction(async (transaction) => {
         const user = await models.user.findByPk(req.user.id, { transaction });
 
-        // VALIDATIONS
         if (!req.body.password) throw new CustomError('You have to send your Actual Password', 412);
         if (!user.checkPassword(req.body.password)) throw new CustomError('The password is incorrect', 412);
         if (req.body.new_password !== req.body.new_password_confirmation) {
@@ -70,9 +68,9 @@ module.exports = {
         return 'Profile updated succesfully';
       });
 
-      // Transaction complete!
       res.status(200).send(response.getResponseCustom(200, result));
       res.end();
+      
     } catch (error) {
       next(error);
     }

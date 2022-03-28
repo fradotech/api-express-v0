@@ -1,13 +1,13 @@
 class CustomError extends Error {
   constructor(message, code) {
-    super(message);
+    super(message)
 
-    this.name = this.constructor.name;
-    this.code = code;
-    this.message = message;
+    this.name = this.constructor.name
+    this.code = code
+    this.message = message
 
-    Error.captureStackTrace(this, this.constructor);
+    Error.captureStackTrace(this, this.constructor)
   }
 }
 
-module.exports = CustomError;
+module.exports = CustomError

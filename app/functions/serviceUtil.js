@@ -71,7 +71,7 @@ const code = {
   511: 'Network Authentication Required',
   598: 'Network read timeout error',
   599: 'Network connect timeout error',
-};
+}
 
 const getErrorResponse = (errCode) => {
   const msg = {
@@ -79,9 +79,9 @@ const getErrorResponse = (errCode) => {
     message: code[errCode],
     success: false,
     data: [],
-  };
-  return msg;
-};
+  }
+  return msg
+}
 
 const getErrorResponseCustom = (errCode, errMsg) => {
   const msg = {
@@ -89,9 +89,9 @@ const getErrorResponseCustom = (errCode, errMsg) => {
     message: errMsg,
     success: false,
     data: [],
-  };
-  return msg;
-};
+  }
+  return msg
+}
 
 const getResponse = (codeResp) => {
   const msg = {
@@ -99,9 +99,9 @@ const getResponse = (codeResp) => {
     message: code[codeResp],
     success: true,
     data: [],
-  };
-  return msg;
-};
+  }
+  return msg
+}
 
 const getResponseCustom = (codeResp, data) => {
   const msg = {
@@ -109,14 +109,14 @@ const getResponseCustom = (codeResp, data) => {
     message: code[codeResp],
     success: true,
     data,
-  };
-  return msg;
-};
+  }
+  return msg
+}
 
-const serviceUtil = {};
-serviceUtil.getErrorResponse = getErrorResponse;
-serviceUtil.getErrorResponseCustom = getErrorResponseCustom;
-serviceUtil.getResponse = getResponse;
-serviceUtil.getResponseCustom = getResponseCustom;
+const serviceUtil = {}
+serviceUtil.getErrorResponse = getErrorResponse
+serviceUtil.getErrorResponseCustom = getErrorResponseCustom
+serviceUtil.getResponse = getResponse
+serviceUtil.getResponseCustom = getResponseCustom
 
-module.exports = serviceUtil;
+module.exports = serviceUtil
