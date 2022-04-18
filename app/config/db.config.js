@@ -6,9 +6,9 @@ module.exports = {
     host: process.env.DB_HOSTNAME,
     port: process.env.DB_PORT,
     dialect: 'mysql',
+    timezone: '+07:00',
     dialectOptions: {
       bigNumberStrings: true,
-      // timezone: '-00:00',
     },
     define: {
       freezeTableName: 1,
@@ -25,10 +25,10 @@ module.exports = {
     host: process.env.DB_HOSTNAME,
     port: process.env.DB_PORT,
     dialect: 'mysql',
+    timezone: '+07:00',
     logging: false,
     dialectOptions: {
       bigNumberStrings: true,
-      // timezone: '-00:00',
       // ssl: {
       //   ca: fs.readFileSync(__dirname + '/mysql-ca-master.crt')
       // }

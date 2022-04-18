@@ -21,6 +21,10 @@ module.exports = {
       password: {
         type: DataTypes.STRING,
       },
+      token: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       created_at: {
         allowNull: false,
         type: DataTypes.DATE,
