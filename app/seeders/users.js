@@ -4,9 +4,9 @@ module.exports = {
       'user',
       [
         {
-          first_name: 'Frado',
-          last_name: 'W',
-          email: 'frado0@example.com',
+          firstName: 'Frado',
+          lastName: 'W',
+          email: 'frado1@gmail.com',
           password:
             '$2b$10$6/r5pBOx0p.o.v15Zx1pQO8oywNYidxSw9oVhiMUap8xmGsfEHoP2', // 123456
         },

@@ -17,62 +17,62 @@ module.exports = {
             email: req.body.email,
           },
           transaction,
-        });
+        })
 
-        if (!user) throw new CustomError('Incorrect User or Password', 401);
-        if (!user.checkPassword(req.body.password)) throw new CustomError('Incorrect User or Password', 401);
+        if (!user) throw new CustomError('Incorrect User or Password', 401)
+        if (!user.checkPassword(req.body.password)) throw new CustomError('Incorrect User or Password', 401)
 
-        const userRes = { ...user };
-        delete userRes.password;
+        const userRes = { ...user }
+        delete userRes.password
 
         return {
           userRes,
           token: auth.generateAccessToken({
             id: user.id,
-            first_name: user.first_name,
-            last_name: user.last_name,
+            firstName: user.firstName,
+            lastName: user.lastName,
             email: user.email,
           }),
-        };
-      });
+        }
+      })
       // Transaction complete!
-      res.status(200).send(response.getResponseCustom(200, result));
-      res.end();
+      res.status(200).send(response.getResponseCustom(200, result))
+      res.end()
     } catch (error) {
       // Transaction Failed!
-      next(error);
+      next(error)
     }
   },
 
   updateProfile: async (req, res, next) => {
     try {
       const result = await models.sequelize.transaction(async (transaction) => {
-        const user = await models.user.findByPk(req.user.id, { transaction });
+        const user = await models.user.findByPk(req.user.id, { transaction })
 
-        if (!req.body.password) throw new CustomError('You have to send your Actual Password', 412);
-        if (!user.checkPassword(req.body.password)) throw new CustomError('The password is incorrect', 412);
-        if (req.body.new_password !== req.body.new_password_confirmation) {
-          throw new CustomError('The New Passwords are not the same', 412);
+        if (!req.body.password) throw new CustomError('You have to send your Actual Password', 412)
+        if (!user.checkPassword(req.body.password)) throw new CustomError('The password is incorrect', 412)
+        if (req.body.newPassword !== req.body.newPassword_confirmation) {
+          throw new CustomError('The New Passwords are not the same', 412)
         }
-        if (req.body.new_password && req.body.new_password.length < 6) {
-          throw new CustomError('New Password must have at least 6 characters');
+        if (req.body.newPassword && req.body.newPassword.length < 6) {
+          throw new CustomError('New Password must have at least 6 characters')
         }
-        if (!req.body.first_name) throw new CustomError('First Name Attribute is required', 412);
-        if (!req.body.last_name) throw new CustomError('Last Name Attribute is required', 412);
+        if (!req.body.firstName) throw new CustomError('First Name Attribute is required', 412)
+        if (!req.body.lastName) throw new CustomError('Last Name Attribute is required', 412)
 
-        user.first_name = req.body.first_name;
-        user.last_name = req.body.last_name;
-        if (req.body.new_password) user.password = req.body.new_password;
-        await user.save({ transaction });
+        user.firstName = req.body.firstName
+        user.lastName = req.body.lastName
+        if (req.body.newPassword) user.password = req.body.newPassword
+        await user.save({ transaction })
 
-        return 'Profile updated succesfully';
-      });
+        return 'Profile updated succesfully'
+      })
 
-      res.status(200).send(response.getResponseCustom(200, result));
-      res.end();
+      res.status(200).send(response.getResponseCustom(200, result))
+      res.end()
       
     } catch (error) {
-      next(error);
+      next(error)
     }
   },
 };

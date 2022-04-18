@@ -7,10 +7,10 @@ module.exports = {
         type: DataTypes.INTEGER,
         primaryKey: true,
       },
-      first_name: {
+      firstName: {
         type: DataTypes.STRING,
       },
-      last_name: {
+      lastName: {
         type: DataTypes.STRING,
       },
       email: {
@@ -21,12 +21,12 @@ module.exports = {
       password: {
         type: DataTypes.STRING,
       },
-      created_at: {
+      createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
         defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'),
       },
-      updated_at: {
+      updatedAt: {
         allowNull: false,
         type: DataTypes.DATE,
         defaultValue: DataTypes.literal(

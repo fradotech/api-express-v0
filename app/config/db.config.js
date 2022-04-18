@@ -14,8 +14,8 @@ module.exports = {
       freezeTableName: 1,
       underscored: true,
       underscoredAll: true,
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
+      createdAt: 'createdAt',
+      updatedAt: 'updatedAt',
     },
   },
   production: {
@@ -37,8 +37,8 @@ module.exports = {
       freezeTableName: 1,
       underscored: true,
       underscoredAll: true,
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
+      createdAt: 'createdAt',
+      updatedAt: 'updatedAt',
     },
   },
 }
