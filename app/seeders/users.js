@@ -16,7 +16,7 @@ module.exports = {
         }, {
           first_name: 'Frado',
           last_name: '3',
-          email: 'frado2@gmail.com',
+          email: 'frado3@gmail.com',
           password: '$2b$10$zED/JAxpDewG.gs2V5ye/.tnOMIzowou3oWKb.HmzpBSnHvxU2dE2', // fradoo
         },
       ],

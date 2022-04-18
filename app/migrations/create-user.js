@@ -21,6 +21,14 @@ module.exports = {
       password: {
         type: DataTypes.STRING,
       },
+      role: {
+        type: DataTypes.STRING,
+        defaultValue: 'User'
+      },
+      verify: {
+        type: DataTypes.INTEGER,
+        defaultValue: false
+      },
       token: {
         type: DataTypes.STRING,
         allowNull: true,
