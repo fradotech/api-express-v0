@@ -5,10 +5,19 @@ module.exports = {
       [
         {
           first_name: 'Frado',
-          last_name: 'W',
+          last_name: '1',
           email: 'frado1@gmail.com',
-          password:
-            '$2b$10$6/r5pBOx0p.o.v15Zx1pQO8oywNYidxSw9oVhiMUap8xmGsfEHoP2', // 123456
+          password: '$2b$10$NteiAbfGrOjh76Wne204Z.M5HeFP.Yzc5s8so6k0opoCzmu0k.q3W', // fradoo
+        }, {
+          first_name: 'Frado',
+          last_name: '2',
+          email: 'frado1@gmail.com',
+          password: '$2b$10$.BSv.jFnPOMlbaMPppdDguzFkDMaruNhyL3TzioUJ9aV7ItHWH2.C', // fradoo
+        }, {
+          first_name: 'Frado',
+          last_name: '3',
+          email: 'frado1@gmail.com',
+          password: '$2b$10$zED/JAxpDewG.gs2V5ye/.tnOMIzowou3oWKb.HmzpBSnHvxU2dE2', // fradoo
         },
       ],
       {},
