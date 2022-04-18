@@ -8,7 +8,7 @@ module.exports = {
     dialect: 'mysql',
     dialectOptions: {
       bigNumberStrings: true,
-      timezone: '-00:00',
+      // timezone: '-00:00',
     },
     define: {
       freezeTableName: 1,
@@ -28,7 +28,7 @@ module.exports = {
     logging: false,
     dialectOptions: {
       bigNumberStrings: true,
-      timezone: '-00:00',
+      // timezone: '-00:00',
       // ssl: {
       //   ca: fs.readFileSync(__dirname + '/mysql-ca-master.crt')
       // }

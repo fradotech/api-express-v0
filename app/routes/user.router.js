@@ -4,9 +4,10 @@ const router = express.Router()
 const controllers = require('../controllers/index')
 const { authMiddleware } = require('../middlewares/auth.js')
 
-router.put('/', [ authMiddleware ], controllers.usersController.update)
+router.put('/', [ authMiddleware ], controllers.userController.update)
+router.get('/', [ authMiddleware ], controllers.userController.profile)
 
 module.exports = {
-  basePath: '/users',
+  basePath: '/user',
   router,
 }

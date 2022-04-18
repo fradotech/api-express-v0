@@ -3,7 +3,23 @@ const response = require('../functions/serviceUtil.js');
 const CustomError = require('../functions/CustomError');
 
 module.exports = {
-  name: 'usersController',
+  name: 'userController',
+
+  profile: async (req, res, next) => {
+    try {
+      const result = await models.sequelize.transaction(async (transaction) => {
+        const user = await models.users.findByPk(req.user.id, { transaction })
+
+        return user
+      })
+
+      res.status(200).send(response.getResponseCustom(200, result))
+      res.end()
+      
+    } catch (error) {
+      next(error)
+    }
+  },
 
   update: async (req, res, next) => {
     try {
