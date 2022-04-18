@@ -11,12 +11,12 @@ module.exports = {
         }, {
           first_name: 'Frado',
           last_name: '2',
-          email: 'frado1@gmail.com',
+          email: 'frado2@gmail.com',
           password: '$2b$10$.BSv.jFnPOMlbaMPppdDguzFkDMaruNhyL3TzioUJ9aV7ItHWH2.C', // fradoo
         }, {
           first_name: 'Frado',
           last_name: '3',
-          email: 'frado1@gmail.com',
+          email: 'frado2@gmail.com',
           password: '$2b$10$zED/JAxpDewG.gs2V5ye/.tnOMIzowou3oWKb.HmzpBSnHvxU2dE2', // fradoo
         },
       ],
